@@ -166,7 +166,6 @@ async function handleRootRequest(request, USERNAME, PASSWORD, enableAuth) {
               <div id="cacheContent" style="display: none;"></div>
           </form>
       </div>
-      <p class="project-link">项目开源于 GitHub - <a href="https://github.com/0-RTT/telegraph" target="_blank" rel="noopener noreferrer">0-RTT/telegraph</a></p>
       <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js" type="application/javascript"></script>
       <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap-fileinput/5.2.7/js/fileinput.min.js" type="application/javascript"></script>
       <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap-fileinput/5.2.7/js/locales/zh.min.js" type="application/javascript"></script>
@@ -786,7 +785,7 @@ async function handleBingImagesRequest(request) {
   if (cachedResponse) return cachedResponse;
   const res = await fetch(cacheKey);
   const bingData = await res.json();
-  const images = bingData.images.map(image => ({ url: `https://cn.bing.com${image.url}` }));
+  const images = bingData.images.map(image => ({ url: `https://www.dmoe.cc/random.php` }));
   const returnData = { status: true, message: "操作成功", data: images };
   const response = new Response(JSON.stringify(returnData), { status: 200, headers: { 'Content-Type': 'application/json' } });
   await cache.put(cacheKey, response.clone());
